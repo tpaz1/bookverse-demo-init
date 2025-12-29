@@ -114,50 +114,14 @@ KEY_ALIAS="${EVIDENCE_KEY_ALIAS:-$ALIAS_DEFAULT}"
 
 # 📦 BookVerse Service Repository Configuration
 # Complete list of all BookVerse service repositories requiring evidence keys
-# This list is dynamically generated based on the current GitHub organization
-get_bookverse_repos() {
-    local github_org
-    if [[ -n "${GITHUB_REPOSITORY:-}" ]]; then
-        github_org=$(echo "$GITHUB_REPOSITORY" | cut -d'/' -f1)
-    else
-        github_org="${GITHUB_ORG:-$(gh api user --jq .login)}"
-    fi
-    
-    local base_repos=(
-        "inventory"
-        "recommendations" 
-        "checkout"
-        "platform"
-        "web"
-        "helm"
-        "demo-assets"
-        "demo-init"
-    )
-    
-    local existing_repos=()
-    for repo in "${base_repos[@]}"; do
-        # Construct full repository name
-        local repo_name
-        if [[ "$repo" == "demo-assets" ]]; then
-            repo_name="repos/bookverse-demo-assets"
-        elif [[ "$repo" == "demo-init" ]]; then
-            repo_name="bookverse-demo-init"
-        else
-            repo_name="bookverse-${repo}"
-        fi
-        
-        if gh repo view "$github_org/$repo_name" > /dev/null 2>&1; then
-            existing_repos+=("$github_org/$repo_name")
-        else
-            echo "⚠️  Repository $github_org/$repo_name not found - skipping" >&2
-        fi
-    done
-    
-    printf '%s\n' "${existing_repos[@]}"
-}
-
-# Generate the service repos list dynamically
-mapfile -t SERVICE_REPOS < <(get_bookverse_repos)
+SERVICE_REPOS=(
+  "tpaz1/bookverse-inventory"      # Core business inventory and stock management
+  "tpaz1/bookverse-recommendations" # AI-powered personalization engine
+  "tpaz1/bookverse-checkout"      # Secure payment processing and transactions
+  "tpaz1/bookverse-platform"      # Unified platform coordination and API gateway
+  "tpaz1/bookverse-web"          # Customer-facing frontend and static assets
+  "tpaz1/bookverse-helm"         # Kubernetes deployment and infrastructure
+)
 
 echo "🔐 Evidence Keys Setup"
 echo "   🔑 Project: $PROJECT_KEY"

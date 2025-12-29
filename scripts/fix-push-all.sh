@@ -141,10 +141,10 @@ for SERVICE in "${SERVICES[@]}"; do
 - Ready for independent CI/CD operations"
     
     git remote remove origin 2>/dev/null || true
-    git remote add origin "git@github.com:yonatanp-jfrog/$SERVICE.git"
+    git remote add origin "git@github.com:tpaz1/$SERVICE.git"
     git push -u origin main
     
-    echo "✅ Successfully pushed: https://github.com/yonatanp-jfrog/$SERVICE"
+    echo "✅ Successfully pushed: https://github.com/tpaz1/$SERVICE"
     
     cd /
     rm -rf "$TEMP_DIR"

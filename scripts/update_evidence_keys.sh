@@ -180,7 +180,7 @@
 #     [Repository Access Testing]
 #     # Test GitHub CLI authentication
 #     gh auth status
-#     gh repo view yonatanp-jfrog/bookverse-inventory
+#     gh repo view tpaz1/bookverse-inventory
 #     
 #     [JFrog Integration Testing]
 #     # Test JFrog API connectivity
@@ -190,7 +190,7 @@
 #     # Complete validation workflow
 #     ./update_evidence_keys.sh --generate --dry-run  # Validate configuration
 #     ./update_evidence_keys.sh --generate             # Execute deployment
-#     gh secret list --repo yonatanp-jfrog/bookverse-inventory | grep EVIDENCE  # Verify secrets
+#     gh secret list --repo tpaz1/bookverse-inventory | grep EVIDENCE  # Verify secrets
 #
 # 🛡️ Security Best Practices:
 #     [Secure Key Handling]
@@ -270,7 +270,7 @@ log_error() { echo -e "${RED}❌ $1${NC}"; }
 PRIVATE_KEY_FILE=""
 PUBLIC_KEY_FILE=""
 KEY_ALIAS="bookverse-evidence-key"
-GITHUB_ORG="yonatanp-jfrog"
+GITHUB_ORG="tpaz1"
 DRY_RUN=false
 GENERATE_KEYS=false
 KEY_TYPE="rsa"
@@ -312,7 +312,7 @@ EXISTING KEYS:
 
 OPTIONAL ARGUMENTS:
     --alias <name>          Key alias (default: bookverse_evidence_key)
-    --org <name>            GitHub organization (default: yonatanp-jfrog)
+    --org <name>            GitHub organization (default: tpaz1)
     --no-jfrog              Skip JFrog Platform update
     --dry-run               Show what would be done without making changes
     --help                  Show this help message

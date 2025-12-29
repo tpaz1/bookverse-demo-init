@@ -3,7 +3,7 @@ set -euo pipefail
 
 
 SERVICE="$1"
-ORG="${2:-yonatanp-jfrog}"
+ORG="${2:-tpaz1}"
 
 if [[ -z "$SERVICE" ]]; then
     echo "❌ Usage: $0 <service-name> [org-name]"

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: bookverse-dev
   source:
-    repoURL: https://github.com/yonatanp-jfrog/bookverse-helm.git
+    repoURL: https://github.com/tpaz1/bookverse-helm.git
     targetRevision: main
     path: charts/platform
     helm:

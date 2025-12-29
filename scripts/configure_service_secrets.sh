@@ -139,7 +139,7 @@
 #     ./scripts/configure_service_secrets.sh TOKEN   # Run with debug output
 #     
 #     [Manual Verification]
-#     gh secret list --repo "yonatanp-jfrog/bookverse-inventory"  # Check secret status
+#     gh secret list --repo "tpaz1/bookverse-inventory"  # Check secret status
 #     gh auth status                                              # Verify CLI auth
 #
 # 🔗 INTEGRATION POINTS:
@@ -239,13 +239,13 @@ echo ""
 # This array contains all BookVerse service repositories that require JFROG_ACCESS_TOKEN
 # for CI/CD operations, container registry access, and artifact management
 SERVICE_REPOS=(
-    "yonatanp-jfrog/bookverse-inventory"      # Inventory microservice repository
-    "yonatanp-jfrog/bookverse-recommendations" # Recommendations AI service repository  
-    "yonatanp-jfrog/bookverse-checkout"       # Checkout and payment service repository
-    "yonatanp-jfrog/bookverse-platform"       # Platform aggregation service repository
-    "yonatanp-jfrog/bookverse-web"            # Web frontend application repository
-    "yonatanp-jfrog/bookverse-helm"           # Helm charts and Kubernetes manifests repository
-    "yonatanp-jfrog/bookverse-infra"          # Infrastructure and DevOps tooling repository
+    "tpaz1/bookverse-inventory"      # Inventory microservice repository
+    "tpaz1/bookverse-recommendations" # Recommendations AI service repository  
+    "tpaz1/bookverse-checkout"       # Checkout and payment service repository
+    "tpaz1/bookverse-platform"       # Platform aggregation service repository
+    "tpaz1/bookverse-web"            # Web frontend application repository
+    "tpaz1/bookverse-helm"           # Helm charts and Kubernetes manifests repository
+    "tpaz1/bookverse-infra"          # Infrastructure and DevOps tooling repository
 )
 
 # 🔐 Optional Dispatch Token Configuration: Configure cross-repository communication token
@@ -257,7 +257,7 @@ if [[ -n "${GH_REPO_DISPATCH_TOKEN:-}" ]]; then
     echo "   Target: bookverse-platform repository for central coordination"
     
     # 📤 Dispatch Token Setup: Configure repository dispatch token securely
-    if echo -n "$GH_REPO_DISPATCH_TOKEN" | gh secret set GH_REPO_DISPATCH_TOKEN --repo "yonatanp-jfrog/bookverse-platform"; then
+    if echo -n "$GH_REPO_DISPATCH_TOKEN" | gh secret set GH_REPO_DISPATCH_TOKEN --repo "tpaz1/bookverse-platform"; then
         echo "✅ bookverse-platform: GH_REPO_DISPATCH_TOKEN configured"
         echo "   Capability: Cross-repository workflow coordination enabled"
     else

@@ -95,7 +95,7 @@
 #
 # Usage:
 #   ./create-clean-repos.sh [organization] [dry_run]
-#   - organization: GitHub organization name (default: yonatanp-jfrog)
+#   - organization: GitHub organization name (default: tpaz1)
 #   - dry_run: true/false for dry run mode (default: false)
 #
 # Safety Notes:
@@ -110,7 +110,7 @@ set -euo pipefail
 
 # 📦 Repository Configuration
 # Clean repository creation configuration for BookVerse microservices
-ORG="${1:-yonatanp-jfrog}"  # GitHub organization for repository creation
+ORG="${1:-tpaz1}"  # GitHub organization for repository creation
 DRY_RUN="${2:-false}"      # Dry run mode for safe testing and validation
 
 # 🏢 BookVerse Service Architecture

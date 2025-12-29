@@ -251,7 +251,7 @@ create_oidc_integration() {
     echo "  Display: $display_name"
     echo "  Provider: GitHub"
     
-    local org_name="${ORG:-yonatanp-jfrog}"
+    local org_name="${ORG:-tpaz1}"
     local integration_payload_github=$(jq -n \
         --arg name "$integration_name" \
         --arg issuer_url "https://token.actions.githubusercontent.com" \

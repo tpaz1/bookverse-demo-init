@@ -78,8 +78,8 @@ metadata:
 spec:
   description: BookVerse PROD environment (PROD-only GitOps)
   sourceRepos:
-    - 'https://github.com/yonatanp-jfrog/bookverse-helm.git'    # Helm charts
-    - 'https://github.com/yonatanp-jfrog/bookverse-demo-init.git' # GitOps configs
+    - 'https://github.com/tpaz1/bookverse-helm.git'    # Helm charts
+    - 'https://github.com/tpaz1/bookverse-demo-init.git' # GitOps configs
   destinations:
     - namespace: 'bookverse-prod'
       server: 'https://kubernetes.default.svc'
@@ -108,7 +108,7 @@ metadata:
 spec:
   project: bookverse-prod
   source:
-    repoURL: https://github.com/yonatanp-jfrog/bookverse-helm.git
+    repoURL: https://github.com/tpaz1/bookverse-helm.git
     targetRevision: main
     path: charts/platform
   destination:

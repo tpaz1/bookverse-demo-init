@@ -8,7 +8,7 @@ This runbook provides step-by-step instructions for demonstrating JFrog AppTrust
 
 ### Required Access
 - **JFrog Platform Instance**: Access to a JFrog Platform with AppTrust enabled
-- **GitHub Organization**: Write access to repositories under the `yonatanp-jfrog` organization
+- **GitHub Organization**: Write access to repositories under the `tpaz1` organization
 - **Administrative Privileges**: JFrog admin token for platform setup
 
 ### Required Tools
@@ -73,7 +73,7 @@ Verify all service repositories have correct variables:
 # Check each repository
 for repo in inventory recommendations checkout platform web; do
   echo "Checking bookverse-${repo}..."
-  gh variable list -R yonatanp-jfrog/bookverse-${repo}
+  gh variable list -R tpaz1/bookverse-${repo}
 done
 
 # Expected variables:
@@ -108,7 +108,7 @@ done
 1. **GitHub Repository Structure**
    ```bash
    # Show repository structure
-   gh repo view yonatanp-jfrog/bookverse-inventory
+   gh repo view tpaz1/bookverse-inventory
    ```
 
 2. **OIDC Integration** 
@@ -119,7 +119,7 @@ done
 3. **CI Workflow Trigger**
    ```bash
    # Make a small change to trigger CI
-   gh repo clone yonatanp-jfrog/bookverse-inventory /tmp/inventory
+   gh repo clone tpaz1/bookverse-inventory /tmp/inventory
    cd /tmp/inventory
    echo "# Demo update $(date)" >> README.md
    git add README.md
@@ -158,12 +158,12 @@ done
 2. **Promotion Workflow**
    ```bash
    # Trigger promotion workflow
-   gh workflow run promote.yml -R yonatanp-jfrog/bookverse-inventory \
+   gh workflow run promote.yml -R tpaz1/bookverse-inventory \
      -f target_stage=QA \
      -f version=1.0.0
    
    # Monitor promotion
-   gh run watch -R yonatanp-jfrog/bookverse-inventory
+   gh run watch -R tpaz1/bookverse-inventory
    ```
 
 3. **Stage Progression**
@@ -188,7 +188,7 @@ done
 2. **Helm Charts and GitOps**
    ```bash
    # Show Helm chart structure
-   gh repo view yonatanp-jfrog/bookverse-helm
+   gh repo view tpaz1/bookverse-helm
    
    # Show GitOps configuration
    # Demo assets are now in repos/bookverse-demo-assets/ subfolder
@@ -218,13 +218,13 @@ curl -s --header "Authorization: Bearer ${JFROG_ADMIN_TOKEN}" \
   "${JFROG_URL}/access/api/v1/oidc" | jq -r '.[] | .name'
 
 # Verify repository variables
-gh variable list -R yonatanp-jfrog/bookverse-inventory
+gh variable list -R tpaz1/bookverse-inventory
 ```
 
 **2. Workflow Failures**
 ```bash
 # Check recent workflow runs
-gh run list -R yonatanp-jfrog/bookverse-inventory --limit 5
+gh run list -R tpaz1/bookverse-inventory --limit 5
 
 # Get detailed logs
 gh run view [RUN_ID] --log

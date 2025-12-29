@@ -60,13 +60,13 @@ echo "📋 Step 5: Creating GitHub repository list..."
 if command -v gh >/dev/null 2>&1; then
     {
         echo "=== Current GitHub Repositories ==="
-        gh repo list yonatanp-jfrog --limit 100
+        gh repo list tpaz1 --limit 100
         echo ""
         echo "=== Repository Details ==="
         for repo in inventory recommendations checkout platform web helm; do
             repo_name="bookverse-${repo}"
             echo "--- $repo_name ---"
-            gh repo view "yonatanp-jfrog/$repo_name" 2>/dev/null || echo "Repository does not exist"
+            gh repo view "tpaz1/$repo_name" 2>/dev/null || echo "Repository does not exist"
             echo ""
         done
     } > "$BACKUP_DIR/github-repos-$TIMESTAMP.txt"
@@ -89,7 +89,7 @@ This backup was created before monorepo split operations.
 ```bash
 git clone bookverse-demo.git restored-bookverse-demo
 cd restored-bookverse-demo
-git remote set-url origin git@github.com:yonatanp-jfrog/bookverse-demo.git
+git remote set-url origin git@github.com:tpaz1/bookverse-demo.git
 ```
 
 ```bash

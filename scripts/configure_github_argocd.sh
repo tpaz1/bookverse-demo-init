@@ -73,7 +73,7 @@
 #     kubectl logs -n argocd deployment/argocd-repo-server
 #     
 #     # Test GitHub connectivity
-#     curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/yonatanp-jfrog/bookverse-helm
+#     curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/tpaz1/bookverse-helm
 #
 # Authors: BookVerse Platform Team
 # Version: 1.0.0
@@ -111,7 +111,7 @@ cleanup_on_exit() {
 trap cleanup_on_exit EXIT
 trap 'echo "🛑 Script interrupted by user"; exit 130' INT TERM
 
-GITHUB_USERNAME="${1:-yonatanp-jfrog}"
+GITHUB_USERNAME="${1:-tpaz1}"
 GITHUB_TOKEN="${GH_REPO_DISPATCH_TOKEN:-}"
 
 # 📋 Token Validation: Comprehensive validation of GitHub authentication token
@@ -264,29 +264,29 @@ type: Opaque
 stringData:
   name: bookverse-github-repo
   type: git
-  url: https://github.com/yonatanp-jfrog/bookverse-helm.git
+  url: https://github.com/tpaz1/bookverse-helm.git
   username: $GITHUB_USERNAME
   password: $GITHUB_TOKEN
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: github-yonatanp-jfrog-creds
+  name: github-tpaz1-creds
   namespace: argocd
   labels:
     argocd.argoproj.io/secret-type: repo-creds
 type: Opaque
 stringData:
-  name: github-yonatanp-jfrog-creds
+  name: github-tpaz1-creds
   type: git
-  url: https://github.com/yonatanp-jfrog
+  url: https://github.com/tpaz1
   username: $GITHUB_USERNAME
   password: $GITHUB_TOKEN
 EOF
 
 echo "📦 Applying GitHub repository credentials to ArgoCD..."
 echo "   Configuring repository secret: bookverse-github-repo"
-echo "   Configuring credential template: github-yonatanp-jfrog-creds"
+echo "   Configuring credential template: github-tpaz1-creds"
 
 # 🔧 Secret Application: Apply ArgoCD repository credentials with enhanced error handling
 if kubectl apply -f "$TEMP_FILE"; then
@@ -323,7 +323,7 @@ else
     echo "   4. Manual secret creation:"
     echo "      kubectl create secret generic bookverse-github-repo \\"
     echo "        --from-literal=type=git \\"
-    echo "        --from-literal=url=https://github.com/yonatanp-jfrog/bookverse-helm.git \\"
+    echo "        --from-literal=url=https://github.com/tpaz1/bookverse-helm.git \\"
     echo "        --from-literal=username='$GITHUB_USERNAME' \\"
     echo "        --from-literal=password='<YOUR_TOKEN>' \\"
     echo "        --namespace=argocd"
@@ -363,4 +363,4 @@ echo ""
 echo "💡 Next steps:"
 echo "   1. Check ArgoCD UI at https://localhost:8081 (if port-forwarded)"
 echo "   2. Verify the application can sync successfully"
-echo "   3. If issues persist, check that the repository https://github.com/yonatanp-jfrog/bookverse-helm.git exists and is accessible"
+echo "   3. If issues persist, check that the repository https://github.com/tpaz1/bookverse-helm.git exists and is accessible"

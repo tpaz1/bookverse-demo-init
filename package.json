@@ -11,16 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yonatanp-jfrog/bookverse-demo-init.git"
+    "url": "git+https://github.com/tpaz1/bookverse-demo-init.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/yonatanp-jfrog/bookverse-demo-init/issues"
+    "url": "https://github.com/tpaz1/bookverse-demo-init/issues"
   },
-  "homepage": "https://github.com/yonatanp-jfrog/bookverse-demo-init#readme",
+  "homepage": "https://github.com/tpaz1/bookverse-demo-init#readme",
   "dependencies": {
     "puppeteer": "^24.22.2"
   }

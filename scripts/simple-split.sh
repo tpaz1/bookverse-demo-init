@@ -105,7 +105,7 @@ set -euo pipefail
 # 📦 Service Configuration
 # Repository splitting configuration for BookVerse microservices
 SERVICE="$1"  # Service name to extract from monorepo
-ORG="yonatanp-jfrog"  # GitHub organization for repository creation
+ORG="tpaz1"  # GitHub organization for repository creation
 
 echo "🚀 Creating repository for: $SERVICE"
 

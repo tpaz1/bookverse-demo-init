@@ -74,7 +74,7 @@ if [[ -z "${PROJECT_KEY:-}" ]]; then
 fi
 
 # GitHub organization for repository dispatch
-GITHUB_ORG="${GITHUB_REPOSITORY_OWNER:-yonatanp-jfrog}"
+GITHUB_ORG="${GITHUB_REPOSITORY_OWNER:-tpaz1}"
 
 # Event subscription configuration
 WEBHOOK_KEY="${PROJECT_KEY}-release-to-github-action"

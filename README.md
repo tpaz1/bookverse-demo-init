@@ -234,10 +234,11 @@ For additional support and documentation, explore the comprehensive guides above
 ---
 
 > **Note**: Individual service documentation is available in each service repository:
-> - [Inventory Service](https://github.com/yonatanp-jfrog/bookverse-inventory)
-> - [Recommendations Service](https://github.com/yonatanp-jfrog/bookverse-recommendations)  
-> - [Checkout Service](https://github.com/yonatanp-jfrog/bookverse-checkout)
-> - [Platform Service](https://github.com/yonatanp-jfrog/bookverse-platform)
-> - [Web Application](https://github.com/yonatanp-jfrog/bookverse-web)
-> - [Helm Charts](https://github.com/yonatanp-jfrog/bookverse-helm)
-> - [Infrastructure Libraries](https://github.com/yonatanp-jfrog/bookverse-infra)
+> - [Inventory Service](https://github.com/tpaz1/bookverse-inventory)
+> - [Recommendations Service](https://github.com/tpaz1/bookverse-recommendations)  
+> - [Checkout Service](https://github.com/tpaz1/bookverse-checkout)
+> - [Platform Service](https://github.com/tpaz1/bookverse-platform)
+> - [Web Application](https://github.com/tpaz1/bookverse-web)
+> - [Helm Charts](https://github.com/tpaz1/bookverse-helm)
+> - [Infrastructure Libraries](https://github.com/tpaz1/bookverse-infra)
+S7w7PDUML4HT6sEw

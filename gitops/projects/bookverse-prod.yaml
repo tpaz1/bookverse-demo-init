@@ -6,8 +6,8 @@ metadata:
 spec:
   description: BookVerse PROD environment (PROD-only GitOps)
   sourceRepos:
-    - 'https://github.com/yonatanp-jfrog/bookverse-helm.git'
-    - 'https://github.com/yonatanp-jfrog/bookverse-demo-init.git'
+    - 'https://github.com/tpaz1/bookverse-helm.git'
+    - 'https://github.com/tpaz1/bookverse-demo-init.git'
   destinations:
     - namespace: 'bookverse-prod'
       server: 'https://kubernetes.default.svc'

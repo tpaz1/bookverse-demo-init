@@ -11,7 +11,7 @@ def main() -> int:
     if not token:
         print("Missing GH_REPO_DISPATCH_TOKEN", file=sys.stderr)
         return 2
-    owner = os.environ.get("GITHUB_OWNER", "yonatanp-jfrog")
+    owner = os.environ.get("GITHUB_OWNER", "tpaz1")
     repo = os.environ.get("GITHUB_REPO", "bookverse-helm")
     event_type = os.environ.get("REPO_DISPATCH_EVENT", "release_completed")
     body = {"event_type": event_type, "client_payload": {"dry_run": True, "source": "validate-script"}}

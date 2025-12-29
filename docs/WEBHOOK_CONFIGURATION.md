@@ -52,7 +52,7 @@ The webhook is configured as a **JFrog Platform Event Subscription** with the fo
   "handlers": [
     {
       "handler_type": "custom-webhook",
-      "url": "https://api.github.com/repos/yonatanp-jfrog/bookverse-helm/dispatches",
+      "url": "https://api.github.com/repos/tpaz1/bookverse-helm/dispatches",
       "method": "POST",
       "payload": "{\"event_type\": \"release_completed\", \"client_payload\": {\"domain\": \"app_trust\", \"event_type\": \"release_completed\", \"data\": {\"application_key\": \"{{.data.application_key}}\", \"application_version\": \"{{.data.application_version}}\", \"stage\": \"{{.data.stage}}\"}, \"subscription_key\": \"bookverse-release-to-github-action\", \"jpd_origin\": \"https://tompazus.jfrog.io\", \"source\": \"AppTrust\"}}",
       "http_headers": [
@@ -191,7 +191,7 @@ When the webhook triggers, it sends the following payload to GitHub:
 ### Target Repository
 
 The webhook targets the **bookverse-helm** repository:
-- **URL**: `https://api.github.com/repos/yonatanp-jfrog/bookverse-helm/dispatches`
+- **URL**: `https://api.github.com/repos/tpaz1/bookverse-helm/dispatches`
 - **Purpose**: Central Helm charts repository for BookVerse platform
 - **Role**: Manages Kubernetes deployment manifests and versions
 
@@ -291,13 +291,13 @@ curl -H "Authorization: Bearer ${JFROG_ADMIN_TOKEN}" \
 ```bash
 # Test GitHub token permissions
 curl -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-  "https://api.github.com/repos/yonatanp-jfrog/bookverse-helm"
+  "https://api.github.com/repos/tpaz1/bookverse-helm"
 
 # Verify repository dispatch permissions
 curl -X POST \
   -H "Authorization: Bearer ${GITHUB_TOKEN}" \
   -H "Accept: application/vnd.github+json" \
-  "https://api.github.com/repos/yonatanp-jfrog/bookverse-helm/dispatches" \
+  "https://api.github.com/repos/tpaz1/bookverse-helm/dispatches" \
   -d '{"event_type":"test","client_payload":{"test":true}}'
 ```
 
