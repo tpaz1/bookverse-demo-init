@@ -621,8 +621,8 @@ jf evd create-evidence \
 jf evd create-evidence \
   --predicate evidence.json \
   --predicate-type "https://slsa.dev/provenance/v1" \
-  --release-bundle "bookverse-inventory" \
-  --release-bundle-version "1.2.3" \
+  --application-key "bookverse-inventory" \
+  --application-version "1.2.3" \
   --project "bookverse" \
   --provider-id github-actions \
   --key "${EVIDENCE_PRIVATE_KEY}" \
