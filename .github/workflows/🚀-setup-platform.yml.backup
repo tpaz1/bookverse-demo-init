@@ -98,7 +98,7 @@ jobs:
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v4
         with:
-          version: latest  # Latest JFrog CLI with AppTrust features
+          version: 2.86.0  # Latest JFrog CLI with AppTrust features
 
       # ✅ Configuration Validation: Verify required environment variables are configured
       - name: "Preflight: require JFROG_URL"

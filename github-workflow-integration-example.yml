@@ -90,6 +90,7 @@ jobs:
           JF_URL: ${{ vars.JFROG_URL }}
         with:
           oidc-provider-name: ${{ vars.OIDC_PROVIDER_NAME }}
+          version: 2.86.0
 
       - name: Generate Version Information
         id: version
@@ -168,6 +169,7 @@ jobs:
           JF_URL: ${{ vars.JFROG_URL }}
         with:
           oidc-provider-name: ${{ vars.OIDC_PROVIDER_NAME }}
+          version: 2.86.0
 
       - name: Create Application Version
         run: |
